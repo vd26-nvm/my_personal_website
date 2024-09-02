@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhan Desai - Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --text-color: #ecf0f1;
+      --background-color: #34495e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <!-- Add your logo image here -->
+        <img src="images/webLogo.png" alt="Your Logo">
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#courses">Courses</a></li>
+      </ul>
+    </nav>
+    <div id="scroll-progress"></div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Vidhan Desai</h1>
+      <p>Rising Senior at Ardrey Kell High School</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a rising senior at Ardrey Kell High School in North Carolina. I have a passion for both biology and computer science which is quite intriguing and leads me to many opportunities. I believe that it is curiosity and persistence that brings about meaningful change. My values are rooted in a desire to make a positive impact, whether through educating others or pushing the boundaries of what science and technology can achieve.</p>
+      <p>My journey in STEM has been shaped by a diverse range of experiences that span both biology and computer science. From conducting research on biophilic design in urban neighborhoods to earning recognition in geospatial technology competitions, I've cultivated a skill set that blends analytical thinking with creative problem-solving. Volunteering at Idea Lab Kids and Discovery Place Science has further enriched my understanding of how to engage others in the wonders of science, fueling my ambition to pursue a career at the intersection of these fields.</p>
+    </section>
+
+    <section id="activities">
+      <h2>Activities</h2>
+      <ul>
+        <li>
+          <img src="images/restoringRainbows.png" alt="Restoring Rainbows Logo">
+          <span class="activity-title">Web Developer at Restoring Rainbows for Southlake</span>
+          <p class="activity-description">Developing and maintaining websites for community initiatives.</p>
+        </li>
+        <li>
+          <img src="images/4H_Emblem.svg.png" alt="4-H Logo">
+          <span class="activity-title">4-H</span>
+          <p class="activity-description">Participating in youth development programs focused on leadership and community service.</p>
+        </li>
+        <li>
+          <img src="images/discoveryPlace.png" alt="Discovery Place Science Logo">
+          <span class="activity-title">Discovery Place Science</span>
+          <p class="activity-description">Volunteering to promote science education and interactive learning experiences.</p>
+        </li>
+        <li>
+          <img src="images/asc_logo.png" alt="All Star Code Logo">
+          <span class="activity-title">All Star Code</span>
+          <p class="activity-description">Engaging in coding programs to develop technical skills and entrepreneurship.</p>
+        </li>
+        <li>
+          <img src="images/technospire.png" alt="Technospire Logo">
+          <span class="activity-title">Technospire Chapter Founder</span>
+          <p class="activity-description">Establishing and leading a technology-focused student organization.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="courses">
+      <h2>High School Courses</h2>
+      <div class="course-container">
+        <div class="course-year active" data-year="freshman">
+          <h3>Freshman</h3>
+          <ul>
+            <li>Honors Math 3</li>
+            <li>Honors English 1</li>
+            <li>Honors World History</li>
+            <li>Visual Art: Beginner</li>
+            <li>French 2</li>
+            <li>Japanese 1</li>
+            <li>AP Psychology</li>
+            <li>Honors Biology</li>
+          </ul>
+        </div>
+        <div class="course-year" data-year="sophomore">
+          <h3>Sophomore</h3>
+          <ul>
+            <li>Honors Pre-Calculus</li>
+            <li>Honors English 2</li>
+            <li>Honors World History</li>
+            <li>Visual Art: Intermediate</li>
+            <li>Honors French 3</li>
+            <li>Japanese 2</li>
+            <li>AP Computer Science Principles</li>
+            <li>Honors Chemistry</li>
+          </ul>
+        </div>
+        <div class="course-year" data-year="junior">
+          <h3>Junior</h3>
+          <ul>
+            <li>AP Research</li>
+            <li>AP English Language</li>
+            <li>Honors Visual Art: Proficient</li>
+            <li>AP Calc AB</li>
+            <li>AP Biology</li>
+            <li>American History 1</li>
+            <li>American History 2</li>
+            <li>Statistical Methods 1</li>
+            <li>Quantitative Literacy</li>
+          </ul>
+        </div>
+        <div class="course-year" data-year="senior">
+          <h3>Senior</h3>
+          <ul>
+            <li>AP Calc BC</li>
+            <li>AP English Literature and Composition</li>
+            <li>AP Chemistry</li>
+            <li>AP Computer Science A</li>
+            <li>Honors Forensic Science</li>
+            <li>Honors Economics and Personal Finance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="course-navigation">
+        <button id="prevCourse" class="course-nav-button" disabled>Previous</button>
+        <button id="nextCourse" class="course-nav-button">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Vidhan Desai. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
