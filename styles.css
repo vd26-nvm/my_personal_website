@@ -172,7 +172,7 @@ footer .contact-info a:hover {
       font-size: 0.9rem; /* Reduced font size */
       font-weight: bold;
       margin-bottom: 0.3rem; /* Reduced from 0.5rem */
-      color: var(--nav-text);
+      color: #F3CA40;
   }
   
   #activities .activity-description {
