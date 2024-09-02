@@ -1,224 +1,3 @@
-:root {
-  --nav-bg: #BB8588;
-  --nav-text: #201A1A;
-  --website-bg: #75704E;
-  --section-bg: #CFD2B2;
-  --section-text: #698996;
-}
-
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #75704E;
-    color: var(--section-text);
-}
-
-/* Header Styles */
-header {
-    background-color: var(--nav-bg);
-    transition: background-color 0.3s ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-header.scrolled {
-    background-color: rgba(187, 133, 136, 1); /* Semi-transparent nav-bg */
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    height: 60px; /* Set a fixed height for the nav */
-}
-
-.logo img {
-    height: 40px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--nav-text);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--section-bg);
-}
-
-/* Scroll Progress Bar */
-#scroll-progress {
-    position: fixed;
-    top: 60px; /* This should now be exactly below the nav */
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background-color: var(--section-text);
-    z-index: 1001;
-    transition: width 0.1s ease;
-}
-
-/* Main Content Styles */
-main {
-    margin-top: 80px;
-    padding: 2rem 5%;
-    padding-top: 64px; /* nav height (60px) + progress bar height (4px) */
-}
-
-section {
-    background-color: var(--section-bg);
-    color: var(--section-text);
-    margin-bottom: 4rem;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-h1, h2, h3 {
-    margin-bottom: 1rem;
-}
-
-/* Hero Section */
-#hero {
-    background-color: #02394A;
-    color: #EAF2D7;
-}
-
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Activities Section */
-
-#activities ul {
-    display: flex;
-    flex-wrap: nowrap; /* Changed from wrap to nowrap */
-    justify-content: space-between; /* Changed from space-around to space-between */
-    list-style: none;
-    padding: 0; /* Added to remove default padding */
-}
-
-#activities li {
-    text-align: center;
-    margin: 0.5rem; /* Reduced margin */
-    width: 18%; /* Set a percentage width instead of fixed width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#activities img {
-    width: 80px; /* Reduced from 100px */
-    height: 80px; /* Reduced from 100px */
-    object-fit: contain;
-    margin-bottom: 0.5rem; /* Reduced from 1rem */
-}
-
-#activities .activity-title {
-    font-size: 0.9rem; /* Reduced font size */
-    font-weight: bold;
-    margin-bottom: 0.3rem; /* Reduced from 0.5rem */
-    color: var(--nav-text);
-}
-
-#activities .activity-description {
-    font-size: 0.8rem; /* Reduced font size */
-    color: var(--section-text);
-}
-
-/* Add media query for smaller screens */
-@media screen and (max-width: 1024px) {
-    #activities ul {
-        flex-wrap: wrap;
-    }
-
-    #activities li {
-        width: 30%; /* Adjust for 3 items per row on smaller screens */
-        margin-bottom: 1rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #activities li {
-        width: 45%; /* Adjust for 2 items per row on even smaller screens */
-    }
-}
-
-/* Courses Section */
-.course-container {
-    position: relative;
-    overflow: hidden;
-    min-height: 300px; /* Changed from fixed height to min-height */
-}
-
-.course-year {
-    position: relative; /* Changed from absolute to relative */
-    width: 100%;
-    opacity: 0;
-    display: none; /* Hide all course years by default */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.course-year.active {
-    opacity: 1;
-    display: block; /* Show only the active course year */
-    transform: translateX(0);
-}
-
-.course-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.course-nav-button {
-    padding: 10px 20px;
-    background-color: #B3DEE2; /* Changed to #B3DEE2 */
-    color: #FFFFFF; /* Changed to white */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.course-nav-button:hover {
-    background-color: #9AC6CA; /* Slightly darker shade for hover effect */
-    transform: translateY(-2px);
-}
-
-.course-nav-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
 /* Footer Styles */
 footer {
     background-color: var(--nav-bg);
@@ -227,345 +6,586 @@ footer {
     padding: 1rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
-    .course-year {
-        flex-basis: 100%;
-    }
-}
-
-/* Section Styles */
-#about {
-    background-color: #02394A; /* Light nav-bg background */
-    animation: fadeInLeft 1s ease-out;
-}
-
-#activities {
-    background-color: #02394A; /* Changed to solid color #02394A */
-    animation: fadeInRight 1s ease-out;
-}
-
-#courses {
-    background-color: #02394A; /* Changed to solid color #02394A */
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Add this for better readability in the about section */
-#about p {
-    background-color: transparent;
-    padding: 15px;
-    border-radius: 5px;
-    color: #FFFFFF; /* Changed to white */
-}
-
-/* Add hover effect for nav items */
-nav ul li a {
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--section-bg);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-/* Enhanced Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Apply animations to sections */
-#hero {
-    animation: scaleIn 0.8s ease-out;
-}
-
-#about {
-    animation: fadeInLeft 0.8s ease-out;
-}
-
-#activities {
-    animation: fadeInRight 0.8s ease-out;
-}
-
-#courses {
-    animation: fadeInUp 0.8s ease-out;
-}
-
-/* Animate navigation items */
-nav ul li {
-    opacity: 0;
-    animation: fadeInDown 0.5s ease-out forwards;
-}
-
-nav ul li:nth-child(1) { animation-delay: 0.1s; }
-nav ul li:nth-child(2) { animation-delay: 0.2s; }
-nav ul li:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Smooth hover transitions for navigation */
-nav ul li a {
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-    transform: translateY(-2px);
-}
-
-/* Animate activity items */
-#activities li {
-    opacity: 0;
-    animation: fadeInUp 0.5s ease-out forwards;
-}
-
-#activities li:nth-child(1) { animation-delay: 0.1s; }
-#activities li:nth-child(2) { animation-delay: 0.2s; }
-#activities li:nth-child(3) { animation-delay: 0.3s; }
-#activities li:nth-child(4) { animation-delay: 0.4s; }
-#activities li:nth-child(5) { animation-delay: 0.5s; }
-
-/* Animate course years */
-.course-year {
-    opacity: 0;
-    animation: scaleIn 0.5s ease-out forwards;
-}
-
-.course-year:nth-child(1) { animation-delay: 0.1s; }
-.course-year:nth-child(2) { animation-delay: 0.2s; }
-.course-year:nth-child(3) { animation-delay: 0.3s; }
-.course-year:nth-child(4) { animation-delay: 0.4s; }
-
-/* Smooth transitions for interactive elements */
-.course-year, #activities li {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-year:hover, #activities li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Animate scroll progress bar */
-#scroll-progress {
-    transition: width 0.3s ease-out;
-}
-
-/* Smooth background gradient animation */
-body {
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Add a subtle parallax effect to the hero section */
-#hero {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Animate the logo */
-.logo img {
-    animation: rotateLogo 20s linear infinite;
-}
-
-@keyframes rotateLogo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Enhanced Section Animations */
-#about, #activities, #courses {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-#about.animate, #activities.animate, #courses.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* About Section Animation */
-#about p {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-#about.animate p {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.3s;
-}
-
-/* Activities Section Animation */
-#activities li {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-#activities.animate li {
-    opacity: 1;
-    transform: scale(1);
-}
-
-#activities.animate li:nth-child(1) { transition-delay: 0.1s; }
-#activities.animate li:nth-child(2) { transition-delay: 0.2s; }
-#activities.animate li:nth-child(3) { transition-delay: 0.3s; }
-#activities.animate li:nth-child(4) { transition-delay: 0.4s; }
-#activities.animate li:nth-child(5) { transition-delay: 0.5s; }
-
-/* Courses Section Animation */
-.course-container {
-    position: relative;
-    overflow: hidden;
-    height: auto; /* Adjust based on your content */
-}
-
-.course-year {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.course-year.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.course-navigation {
+footer .contact-info {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.course-nav-button {
-    padding: 10px 20px;
-    background-color: #B3DEE2; /* Changed to #B3DEE2 */
-    color: #FFFFFF; /* Changed to white */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+footer .contact-info a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.course-nav-button:hover {
-    background-color: #9AC6CA; /* Slightly darker shade for hover effect */
-    transform: translateY(-2px);
+footer .contact-info a:hover {
+    color: var(--section-bg);
 }
 
-.course-nav-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+:root {
+    --nav-bg: #BB8588;
+    --nav-text: #201A1A;
+    --website-bg: #75704E;
+    --section-bg: #CFD2B2;
+    --section-text: #698996;
+  }
+  
+  /* Global Styles */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #75704E;
+      color: var(--section-text);
+  }
+  
+  /* Header Styles */
+  header {
+      background-color: var(--nav-bg);
+      transition: background-color 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+  }
+  
+  header.scrolled {
+      background-color: rgba(187, 133, 136, 1); /* Semi-transparent nav-bg */
+  }
+  
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      height: 60px; /* Set a fixed height for the nav */
+  }
+  
+  .logo img {
+      height: 40px;
+  }
+  
+  nav ul {
+      display: flex;
+      list-style: none;
+  }
+  
+  nav ul li {
+      margin-left: 2rem;
+  }
+  
+  nav ul li a {
+      text-decoration: none;
+      color: var(--nav-text);
+      font-weight: bold;
+      transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+      color: var(--section-bg);
+  }
+  
+  /* Scroll Progress Bar */
+  #scroll-progress {
+      position: fixed;
+      top: 60px; /* This should now be exactly below the nav */
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background-color: var(--section-text);
+      z-index: 1001;
+      transition: width 0.1s ease;
+  }
+  
+  /* Main Content Styles */
+  main {
+      margin-top: 80px;
+      padding: 2rem 5%;
+      padding-top: 64px; /* nav height (60px) + progress bar height (4px) */
+  }
+  
+  section {
+      background-color: var(--section-bg);
+      color: var(--section-text);
+      margin-bottom: 4rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1, h2, h3 {
+      margin-bottom: 1rem;
+  }
+  
+  /* Hero Section */
+  #hero {
+      background-color: #02394A;
+      color: #EAF2D7;
+  }
+  
+  #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+  }
+  
+  /* Activities Section */
+  
+  #activities ul {
+      display: flex;
+      flex-wrap: nowrap; /* Changed from wrap to nowrap */
+      justify-content: space-between; /* Changed from space-around to space-between */
+      list-style: none;
+      padding: 0; /* Added to remove default padding */
+  }
+  
+  #activities li {
+      text-align: center;
+      margin: 0.5rem; /* Reduced margin */
+      width: 18%; /* Set a percentage width instead of fixed width */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  #activities img {
+      width: 80px; /* Reduced from 100px */
+      height: 80px; /* Reduced from 100px */
+      object-fit: contain;
+      margin-bottom: 0.5rem; /* Reduced from 1rem */
+  }
+  
+  #activities .activity-title {
+      font-size: 0.9rem; /* Reduced font size */
+      font-weight: bold;
+      margin-bottom: 0.3rem; /* Reduced from 0.5rem */
+      color: var(--nav-text);
+  }
+  
+  #activities .activity-description {
+      font-size: 0.8rem; /* Reduced font size */
+      color: var(--section-text);
+  }
+  
+  /* Add media query for smaller screens */
+  @media screen and (max-width: 1024px) {
+      #activities ul {
+          flex-wrap: wrap;
+      }
+  
+      #activities li {
+          width: 30%; /* Adjust for 3 items per row on smaller screens */
+          margin-bottom: 1rem;
+      }
+  }
+  
+  @media screen and (max-width: 768px) {
+      #activities li {
+          width: 45%; /* Adjust for 2 items per row on even smaller screens */
+      }
+  }
+  
+  /* Courses Section */
+  .course-container {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px; /* Changed from fixed height to min-height */
+  }
+  
+  .course-year {
+      position: relative; /* Changed from absolute to relative */
+      width: 100%;
+      opacity: 0;
+      display: none; /* Hide all course years by default */
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .course-year.active {
+      opacity: 1;
+      display: block; /* Show only the active course year */
+      transform: translateX(0);
+  }
+  
+  .course-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  .course-nav-button {
+      padding: 10px 20px;
+      background-color: #B3DEE2; /* Changed to #B3DEE2 */
+      color: #FFFFFF; /* Changed to white */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .course-nav-button:hover {
+      background-color: #9AC6CA; /* Slightly darker shade for hover effect */
+      transform: translateY(-2px);
+  }
+  
+  .course-nav-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+  }
+  
 
-/* Section Headings */
-#activities h2,
-#about h2,
-#courses h2 {
-    color: #4A051C;
-}
+  
+  /* Animations */
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  
+  section {
+      animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+      nav {
+          flex-direction: column;
+      }
+  
+      nav ul {
+          margin-top: 1rem;
+      }
+  
+      .course-year {
+          flex-basis: 100%;
+      }
+  }
+  
+  /* Section Styles */
+  #about {
+      background-color: #02394A; /* Light nav-bg background */
+      animation: fadeInLeft 1s ease-out;
+  }
+  
+  #activities {
+      background-color: #02394A; /* Changed to solid color #02394A */
+      animation: fadeInRight 1s ease-out;
+  }
+  
+  #courses {
+      background-color: #02394A; /* Changed to solid color #02394A */
+      animation: fadeInUp 1s ease-out;
+  }
+  
+  @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Add this for better readability in the about section */
+  #about p {
+      background-color: transparent;
+      padding: 15px;
+      border-radius: 5px;
+      color: #FFFFFF; /* Changed to white */
+  }
+  
+  /* Add hover effect for nav items */
+  nav ul li a {
+      position: relative;
+  }
+  
+  nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--section-bg);
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover::after {
+      visibility: visible;
+      transform: scaleX(1);
+  }
+  
+  /* Enhanced Animations */
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  @keyframes fadeInLeft {
+      from {
+          opacity: 0;
+          transform: translateX(-30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+  
+  @keyframes fadeInRight {
+      from {
+          opacity: 0;
+          transform: translateX(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+  
+  @keyframes scaleIn {
+      from {
+          opacity: 0;
+          transform: scale(0.9);
+      }
+      to {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+  
+  /* Apply animations to sections */
+  #hero {
+      animation: scaleIn 0.8s ease-out;
+  }
+  
+  #about {
+      animation: fadeInLeft 0.8s ease-out;
+  }
+  
+  #activities {
+      animation: fadeInRight 0.8s ease-out;
+  }
+  
+  #courses {
+      animation: fadeInUp 0.8s ease-out;
+  }
+  
+  /* Animate navigation items */
+  nav ul li {
+      opacity: 0;
+      animation: fadeInDown 0.5s ease-out forwards;
+  }
+  
+  nav ul li:nth-child(1) { animation-delay: 0.1s; }
+  nav ul li:nth-child(2) { animation-delay: 0.2s; }
+  nav ul li:nth-child(3) { animation-delay: 0.3s; }
+  
+  @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  /* Smooth hover transitions for navigation */
+  nav ul li a {
+      transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+      transform: translateY(-2px);
+  }
+  
+  /* Animate activity items */
+  #activities li {
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  #activities li:nth-child(1) { animation-delay: 0.1s; }
+  #activities li:nth-child(2) { animation-delay: 0.2s; }
+  #activities li:nth-child(3) { animation-delay: 0.3s; }
+  #activities li:nth-child(4) { animation-delay: 0.4s; }
+  #activities li:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Animate course years */
+  .course-year {
+      opacity: 0;
+      animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  .course-year:nth-child(1) { animation-delay: 0.1s; }
+  .course-year:nth-child(2) { animation-delay: 0.2s; }
+  .course-year:nth-child(3) { animation-delay: 0.3s; }
+  .course-year:nth-child(4) { animation-delay: 0.4s; }
+  
+  /* Smooth transitions for interactive elements */
+  .course-year, #activities li {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .course-year:hover, #activities li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Animate scroll progress bar */
+  #scroll-progress {
+      transition: width 0.3s ease-out;
+  }
+  
+  /* Smooth background gradient animation */
+  body {
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+  }
+  
+  /* Add a subtle parallax effect to the hero section */
+  #hero {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+  /* Animate the logo */
+  .logo img {
+      animation: rotateLogo 20s linear infinite;
+  }
+  
+  @keyframes rotateLogo {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  }
+  
+  /* Enhanced Section Animations */
+  #about, #activities, #courses {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  #about.animate, #activities.animate, #courses.animate {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  
+  /* About Section Animation */
+  #about p {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  #about.animate p {
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.3s;
+  }
+  
+  /* Activities Section Animation */
+  #activities li {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  #activities.animate li {
+      opacity: 1;
+      transform: scale(1);
+  }
+  
+  #activities.animate li:nth-child(1) { transition-delay: 0.1s; }
+  #activities.animate li:nth-child(2) { transition-delay: 0.2s; }
+  #activities.animate li:nth-child(3) { transition-delay: 0.3s; }
+  #activities.animate li:nth-child(4) { transition-delay: 0.4s; }
+  #activities.animate li:nth-child(5) { transition-delay: 0.5s; }
+  
+  /* Courses Section Animation */
+  .course-container {
+      position: relative;
+      overflow: hidden;
+      height: auto; /* Adjust based on your content */
+  }
+  
+  .course-year {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .course-year.active {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  
+  .course-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  .course-nav-button {
+      padding: 10px 20px;
+      background-color: #B3DEE2; /* Changed to #B3DEE2 */
+      color: #FFFFFF; /* Changed to white */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .course-nav-button:hover {
+      background-color: #9AC6CA; /* Slightly darker shade for hover effect */
+      transform: translateY(-2px);
+  }
+  
+  .course-nav-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+  }
+  
+  /* Section Headings */
+  #activities h2,
+  #about h2,
+  #courses h2 {
+      color: #4A051C;
+  }
